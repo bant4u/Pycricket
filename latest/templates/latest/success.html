@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+		<head>
+			<title>Sports!!!</title>
+				{% load staticfiles %}
+				<link rel="stylesheet" type="text/css" href="{% static 'latest/style.css' %}">
+				<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+		</head>
+		
+
+	<body>
+		<div class="container">
+			<ul class="nav nav-pills">
+  				<li ><a href="#">Home</a></li>
+			  	<li><a href="#">Latest</a></li>
+			  	<li class="active"><a href="latest/games">Games</a></li>
+			</ul>
+
+			<div class="row">
+  				<div class="col-md-6">
+  					<h3>Sport site Survey <small>Form Fill up!!</small> 
+
+						<button type="button" class="close" aria-hidden="true">&times;</button>
+						
+					</h3>
+  					<form role="form" class="form-horizontal " action="" method="POST">
+					{%csrf_token%}
+					<table class='table table-hover '>
+							<tr>
+							    <td>{{ form.game_name.label_tag }}</td>
+							    <td>{{ form.game_name }}</td>
+							</tr>
+							<tr>
+							    <td>{{ form.game_type.label_tag }}</td>
+							    <td>{{ form.game_type }}</td>
+							</tr>
+							<tr>
+							    <td>{{ form.game_start_date.label_tag }}</td>
+							    <td>{{ form.game_start_date}}</td>
+							</tr>
+							<tr>
+							    <td>{{ form.game_players.label_tag }}</td>
+							    <td>{{ form.game_players }}</td>
+							</tr>
+							<tr>
+							    <td>{{ form.game_comment.label_tag }}</td>
+							    <td>{{ form.game_comment }}</td>
+							</tr>
+
+					</table>
+					 	<input type="submit" value="Save" class="btn btn-primary btn-lg btn-block"></input>
+					</form>
+						
+ 				 </div>
+ 			 	<div class="col-md-6">
+ 			 				<a href="/latest/test?test={{ request.path }}">Login</a>
+ 			 				<object style="height: 390px; width: 613px"><param name="movie" value="http://www.youtube.com/watch?v=oT1A1KKf0SI"><param name="allowFullScreen" value="true"><param name="allowScriptAccess" value="always"><embed src="http://www.youtube.com/watch?v=oT1A1KKf0SI" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="613px" height="390"></object>
+ 			 				<address>
+							  <strong>Janaki Tech</strong><br>
+							  Lalitpur,Pulchowk<br>
+							  Nepal<br>
+							  <abbr title="Phone">P:</abbr> 9848422934
+							</address>
+
+ 			 	</div>
+			</div>
+		</div>
+		
+	
+		
+	</body>
+</html>

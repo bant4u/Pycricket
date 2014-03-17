@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sports!!!</title>
+	{% load staticfiles %}
+	<link rel="shortcut icon" type="image/png" href="{% static 'latest/images/canvas.png' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'latest/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link href="{% static 'latest/default.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'latest/fonts.css' %}" rel="stylesheet" type="text/css" media="all" />
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+</head>
+<body>
+<div id="header" class="container">
+	<div id="logo">
+		<h1><a href="#">PyCricInfo</a></h1>
+	</div>
+	<div id="menu">
+		<ul>
+			<li class="active"><a href="#" accesskey="1" title="">Homepage</a></li>
+			<li><a href="#" accesskey="3" title="">Gallery</a></li>
+			<li><a href="/latest/games/" accesskey="3" title="">Games</a></li>
+			<li><a href="#" accesskey="5" title="">About us</a></li>
+		</ul>
+	</div>
+</div>
+<div id="page">
+	<div class="container">
+		        <div class="col-md-12">
+  					<table class="table table-hover table-bordered">
+  						<h4>Today's Update</h4>
+  						<tr><td><strong>Match Description</strong></td>
+
+  							
+  								{% for item in itemlist %}
+
+  									<td>{{item.attributes.mchDesc.value}}</td>
+
+  								{% endfor %}
+  						</tr>
+  						<tr><td><strong>Status</strong></td>
+
+  								{% for state in statelist %}
+  								
+  									<td>{{state.attributes.status.value}}</td>
+  								
+  								{% endfor %}
+  						</tr>
+  						<tr><td><strong>Man of match</strong></td>
+
+  								{% for mom in momlist %}
+  								
+  									<td>{{mom.attributes.Name.value}}</td>
+  								
+  								{% endfor %}
+  						</tr>		
+
+  							
+  						
+  					</table>
+  				</div>
+		<div class="title">
+			<h2>PyCricInfo Nepal</h2>
+			<p>This is <strong> Pycric Nepal </strong>, This sites provides the latest news of cricket from the world. We can find all the happening of Nepalese cricket games. </p>
+		</div>
+		<div class="boxA">
+			<div class="box margin-btm">
+				<img src="{% static 'latest/images/pic01.jpg' %}" width="320" height="180" alt="" />
+				<div class="details">
+					<p>Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget, tempus et, tellus. Etiam neque. Vivamus consequat lorem at nisl.</p>
+				</div>
+				<a href="#" class="button">More Details</a>
+			</div>
+			<div class="box">
+				<img src="{% static 'latest/images/pic02.jpg' %}" width="320" height="220" alt="" />
+				<div class="details">
+					<p>Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget, tempus et, tellus. Etiam neque. Vivamus consequat lorem at nisl.</p>
+				</div>
+				<a href="#" class="button">More Details</a>
+			</div>
+		</div>
+		<div class="boxB">
+			<div class="box">
+				<img src="{% static 'latest/images/pic03.jpg' %}" width="320" height="280" alt="" />
+				<div class="details">
+					<p>Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget, tempus et, tellus. Etiam neque. Vivamus consequat lorem at nisl.</p>
+				</div>
+				<a href="#" class="button">More Details</a>
+			</div>
+			<div class="box">
+				<img src="{% static 'latest/images/pic05.jpg' %}" width="320" height="140" alt="" />
+				<div class="details">
+					<p>Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget, tempus et, tellus. Etiam neque. Vivamus consequat lorem at nisl.</p>
+				</div>
+				<a href="#" class="button">More Details</a>
+			</div>
+			
+		</div>
+		<div class="boxC">
+			<div class="box">
+				<img src="{% static 'latest/images/pic04.jpg' %}" width="320" height="200" alt="" />
+				<div class="details">
+					<p>Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget, tempus et, tellus. Etiam neque. Vivamus consequat lorem at nisl.</p>
+				</div>
+				<a href="#" class="button">More Details</a>
+			</div>
+			<div class="box">
+				<img src="{% static 'latest/images/pic06.jpg'%}" width="320" height="200" alt="" />
+				<div class="details">
+					<p>Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget, tempus et, tellus. Etiam neque. Vivamus consequat lorem at nisl.</p>
+				</div>
+				<a href="#" class="button">More Details</a>
+			</div>
+			
+		</div>
+	</div>
+</div>
+      <!-- FOOTER -->
+      <div class="footer">
+        <p>&copy; Pycricinfo.com 2014</p>
+         			 		<address>
+							  <strong>Janaki Tech</strong><br>
+							  Lalitpur,Pulchowk<br>
+							  Nepal<br>
+							  <abbr title="Phone">P:</abbr> 9848422934
+							</address>
+      </div>
+
+    </div><!-- /.container -->
+</body>
+</html>
+
+		
+		
