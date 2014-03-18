@@ -1,0 +1,104 @@
+	<mchdata NMchs="6">
+		<links fUrlBase="http://synd.cricbuzz.com/j2me/1.0/flags/team_" />
+	
+	
+		<match id="3" type="T20" srs="ICC World Twenty20 2014" mchDesc="IRE vs ZIM" mnum="3rd Match, Group B"  vcity="Sylhet" vcountry="Bangladesh" grnd="Sylhet Stadium" inngCnt="0" datapath="http://synd.cricbuzz.com/j2me/1.0/match/2014/2014_ICC_WORLD_T20/IRE_ZIM_MAR17/" >
+	 <state mchState="preview" status="Starts on Mar 17 at 09:30 GMT" TW="" decisn="" addnStatus="" splStatus="">
+	</state>
+	<Tm id="27" Name="IRE" sName="IRE"  flag='1'/>
+	<Tm id="12" Name="Zim" sName="ZIM"  flag='1'/>
+	
+
+	<Tme Dt="Mar 17 2014" stTme="09:30" enddt ="Mar 17 2014" ></Tme>		
+
+	</match>
+	
+	
+	
+		<match id="4" type="T20" srs="ICC World Twenty20 2014" mchDesc="NED vs UAE" mnum="4th Match, Group B"  vcity="Sylhet" vcountry="Bangladesh" grnd="Sylhet Stadium" inngCnt="0" datapath="http://synd.cricbuzz.com/j2me/1.0/match/2014/2014_ICC_WORLD_T20/NED_UAE_MAR17/" >
+	 <state mchState="preview" status="Starts on Mar 17 at 13:30 GMT" TW="" decisn="" addnStatus="" splStatus="">
+	</state>
+	<Tm id="24" Name="NED" sName="NED"  flag='1'/>
+	<Tm id="7" Name="UAE" sName="UAE"  flag='0'/>
+	
+	
+	<Tme Dt="Mar 17 2014" stTme="13:30" enddt ="Mar 17 2014" ></Tme>		
+
+	</match>
+	
+	
+	
+		<match id="2" type="T20" srs="ICC World Twenty20 2014" mchDesc="HK vs NEP" mnum="2nd Match, Group A"  vcity="Chittagong" vcountry="Bangladesh" grnd="Zahur Ahmed Chowdhury Stadium" inngCnt="2" datapath="http://synd.cricbuzz.com/j2me/1.0/match/2014/2014_ICC_WORLD_T20/HK_NEP_MAR16/" >
+	 <state mchState="complete" status="Scores delayed by 15 mins NEP won by 80 runs" TW="HK" decisn="Fielding" addnStatus="" splStatus="">
+	</state>
+	<Tm id="8" Name="HK" sName="HK"  flag='0'/>
+	<Tm id="72" Name="NEP" sName="NEP"  flag='0'/>
+	
+	
+	<Tme Dt="Mar 16 2014" stTme="13:30" enddt ="Mar 16 2014" ></Tme>		
+
+	<mscr>
+		<inngsdetail noofovers="50" rrr="0" crr="4.06" cprtshp=""/>
+	<btTm id="8" sName="HK">
+			<Inngs desc="Inns" r="69"  Decl="0" FollowOn="0" ovrs="17" wkts="10"/>
+	</btTm>
+	<blgTm id="72" sName="NEP">
+			<Inngs desc="Inns" r="149"  Decl="0" FollowOn="0" ovrs="20" wkts="8"/>
+	</blgTm>
+
+	</mscr>
+	</match>
+	
+	
+	
+		<match id="1" type="T20" srs="ICC World Twenty20 2014" mchDesc="BAN vs AFG" mnum="1st Match, Group A"  vcity="Dhaka" vcountry="Bangladesh" grnd="Shere Bangla National Stadium" inngCnt="2" datapath="http://synd.cricbuzz.com/j2me/1.0/match/2014/2014_ICC_WORLD_T20/BAN_AFG_MAR16/" >
+	 <state mchState="complete" status="Scores delayed by 15 mins Ban won by 9 wkts" TW="Ban" decisn="Fielding" addnStatus="" splStatus="">
+	</state>
+	<Tm id="6" Name="Ban" sName="BAN"  flag='1'/>
+	<Tm id="96" Name="AFG" sName="AFG"  flag='1'/>
+	
+	
+	<Tme Dt="Mar 16 2014" stTme="09:30" enddt ="Mar 16 2014" ></Tme>		
+
+	<mscr>
+		<inngsdetail noofovers="50" rrr="0" crr="6.5" cprtshp="33(26)"/>
+	<btTm id="6" sName="BAN">
+			<Inngs desc="Inns" r="78"  Decl="0" FollowOn="0" ovrs="12" wkts="1"/>
+	</btTm>
+	<blgTm id="96" sName="AFG">
+			<Inngs desc="Inns" r="72"  Decl="0" FollowOn="0" ovrs="17.1" wkts="10"/>
+	</blgTm>
+
+	</mscr>
+	</match>
+	
+	
+	
+	<match id='13085' type="T20" srs="ICC World Twenty20 2014" mchDesc="HK vs NEP" mnum="2nd Match, Group A"  inngCnt="2" datapath="http://synd.cricbuzz.com/j2me/1.0/match/2014/2014_ICC_WORLD_T20/HK_NEP_MAR16/" >
+	
+		<state mchState="Result" status="NEP won by 80 runs">	</state>
+			<manofthematch NoOfPlayers="1">
+				<mom Name="Shakti Prasad Gauchan"/>
+			</manofthematch>
+		<Tm id="8" Name="HK" sName="HK"  flag='0'/>
+		<Tm id="72" Name="NEP" sName="NEP"  flag='0'/>
+		
+		<Tme Dt="Mar 16 2014" stTme="13:30" enddt ="Mar 16 2014"></Tme>
+
+	</match>
+	
+	
+	<match id='13084' type="T20" srs="ICC World Twenty20 2014" mchDesc="BAN vs AFG" mnum="1st Match, Group A"  inngCnt="2" datapath="http://synd.cricbuzz.com/j2me/1.0/match/2014/2014_ICC_WORLD_T20/BAN_AFG_MAR16/" >
+	
+		<state mchState="Result" status="Ban won by 9 wkts">	</state>
+			<manofthematch NoOfPlayers="1">
+				<mom Name="Shakib Al Hasan"/>
+			</manofthematch>
+		<Tm id="6" Name="Ban" sName="BAN"  flag='1'/>
+		<Tm id="96" Name="AFG" sName="AFG"  flag='1'/>
+		
+		<Tme Dt="Mar 16 2014" stTme="09:30" enddt ="Mar 16 2014"></Tme>
+
+	</match>
+	</mchdata>
+

@@ -56,6 +56,7 @@ def game(request):
 class ListGameView(ListView):
 	model=Game
 	template_name = 'latest/game_list.html'
+	paginate_by = 5
 
 class CreateGameView(CreateView):
 	model=Game
