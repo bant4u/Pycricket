@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sports!!!</title>
+    {% load staticfiles %}
+    <link rel="shortcut icon" type="image/png" href="{% static 'latest/images/canvas.png' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'latest/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link href="{% static 'latest/default.css' %}" rel="stylesheet" type="text/css" media="all" />
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+</head>
+<body>
+<div id="header" class="container">
+    <div id="logo">
+        <h1><a href="#">PyCricInfo</a></h1>
+    </div>
+    <div id="menu">
+        <ul>
+            <li class="active"><a href="#" accesskey="1" title="">Homepage</a></li>
+            <li><a href="#" accesskey="3" title="">Gallery</a></li>
+            <li><a href="/latest/games/" accesskey="3" title="">Games</a></li>
+            <li><a href="#" accesskey="5" title="">About us</a></li>
+        </ul>
+    </div>
+</div>
+    <body>
+        <h1>Register with Pycric</h1>
+
+        {% if registered %}
+        PYcric says: <strong>thank you for registering!</strong>
+        <a href="/latest/games">Return to the homepage.</a><br />
+        {% else %}
+        Pycric says: <strong>register here!</strong><br />
+
+        <form id="user_form" method="POST" action="" enctype="multipart/form-data">
+                {% csrf_token %} 
+                {{ user_form.as_p }}
+            <input type="submit" name="submit" value="Register" />
+        </form>
+        {% endif %}
+    </body>
+{% include "latest/footer.html" %}
