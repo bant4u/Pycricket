@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sports!!!</title>
+	{% load staticfiles %}
+	<link rel="shortcut icon" type="image/png" href="{% static 'latest/images/canvas.png' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'latest/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+</head>
+<h1>Games</h1>
+<table class="table ">
+	<tr><td>Game Name</td><td>Game Type</td><td>Game Players</td><td>Comment</td></tr>
+	{% for games in object_list %}
+	<tr><td>{{games.game_name}}</td><td>{{games.game_type}}</td><td>{{games.game_players}}</td><td>{{games.game_comment}}</td></tr>
+	{% endfor %}
+
+</table>
+</html>
+	

@@ -1,6 +1,8 @@
 from django.shortcuts import render_to_response, get_object_or_404, redirect
 from latest.models import Game
 from latest.forms import NewSportForm
+from django.views.generic import ListView,CreateView
+from django.core.urlresolvers import reverse
 
 
 def index(request):
@@ -47,4 +49,17 @@ def game(request):
 
 	return render_to_response('latest/gamedetails.html', {'itemlist':itemlist,'statelist':statelist,'momlist':momlist})
 
+class ListGameView(ListView):
+	model=Game
+	template_name = 'latest/game_list.html'
 
+class CreateGameView(CreateView):
+	model=Game
+	template_name = 'latest/edit_game.html'
+
+	def get_success_url(self):
+		return reverse('game-list')
+
+		
+
+		
