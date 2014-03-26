@@ -1,75 +1,78 @@
 from django.shortcuts import render_to_response, get_object_or_404, redirect
 from latest.models import Game
-from latest.forms import NewSportForm,UserForm
-from django.views.generic import ListView,CreateView
+from latest.forms import NewSportForm, UserForm
+from django.views.generic import ListView, CreateView
 from django.core.urlresolvers import reverse
 from django.template import RequestContext
-from django.contrib.auth import authenticate, login,logout
+from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
+import json
+import requests
 
 
 def index(request):
-	form=NewSportForm()
-	#import pdb
-	#pdb.set_trace()
-	if request.method=='POST':
-		form=NewSportForm(request.POST)
-		if form.is_valid():
-			form.save()
-			print "success"
-			return render(request,'latest/error.html',{'error_message':form})
-	return render(request,'latest/index.html',{'form':form})
+    form=NewSportForm()
+    #import pdb
+    #pdb.set_trace()
+    if request.method == 'POST':
+        form = NewSportForm(request.POST)
+        if form.is_valid():
+            form.save()
+            print "success"
+            return render_to_response('latest/error.html', {'error_message': form})
+        return render_to_response('latest/index.html', {'form': form})
+
 
 def latest(request):
-	form=NewSportForm()
-	#import pdb
-	#pdb.set_trace()
-	if request.method=='POST':
-		form=NewSportForm(request.POST)
-		if form.is_valid():
-			form.save()
-			print "success"
-			return render(request,'latest/error.html',{'error_message':form})
-	return render(request,'latest/success.html',{'form':form})
+    form = NewSportForm()
+    #import pdb
+    #pdb.set_trace()
+    if request.method == 'POST':
+        form = NewSportForm(request.POST)
+        if form.is_valid():
+            form.save()
+            print "success"
+            return render_to_response('latest/error.html', {'error_message': form})
+    return render_to_response('latest/success.html', {'form': form})
+
 
 def game(request):
-	from xml.dom import minidom
-	import urllib
-	url = "http://synd.cricbuzz.com/j2me/1.0/livematches.xml"
-	dom = minidom.parse(urllib.urlopen(url))
-	#minidom.parse('livematches.xml')
-	print dom
+    from xml.dom import minidom
+    import urllib
+    url = "http://synd.cricbuzz.com/j2me/1.0/livematches.xml"
+    dom = minidom.parse(urllib.urlopen(url))
+    #minidom.parse('livematches.xml')
+    print dom
+    #mATCH nAME
+    itemlist = dom.getElementsByTagName('match')
+    statelist = dom.getElementsByTagName('state')
+    momlist = dom.getElementsByTagName('mom')
+    # only for json data saving
+    #r = requests.get("cricscore-api.appspot.com/csa",headers={"content-type":"application/json"})
+    #with open('data.txt', 'w') as outfile:
+    #    json.dump(r.json(), outfile)
+    return render_to_response('latest/gamedetails.html', {'itemlist': itemlist, 'statelist': statelist,
+                                                          'momlist': momlist})
 
-	#mATCH nAME
-	itemlist = dom.getElementsByTagName('match')
-
-
-	statelist = dom.getElementsByTagName('state')
-
-
-
-	momlist=dom.getElementsByTagName('mom')
-
-	return render_to_response('latest/gamedetails.html', {'itemlist':itemlist,'statelist':statelist,'momlist':momlist})
 
 class ListGameView(ListView):
-	model=Game
-	template_name = 'latest/game_list.html'
-	paginate_by = 5
+    model = Game
+    template_name = 'latest/game_list.html'
+    paginate_by = 5
+
 
 class CreateGameView(CreateView):
-	model=Game
-	template_name = 'latest/edit_game.html'
+    model = Game
+    template_name = 'latest/edit_game.html'
 
-	def get_success_url(self):
-		return reverse('game-list')
+    def get_success_url(self):
+        return reverse('game-list')
+
 
 def register(request):
-	    # Like before, obtain the context for the user's request.
+    # Like before, obtain the context for the user's request.
     context = RequestContext(request)
-
-
     # A boolean value for telling the template whether the registration was successful.
     # Set to False initially. Code changes value to True when registration succeeds.
     registered = False
@@ -106,12 +109,13 @@ def register(request):
 
     # Render the template depending on the context.
     return render_to_response(
-            'latest/register.html',
-            {'user_form': user_form, 'registered': registered},context)
+        'latest/register.html',
+        {'user_form': user_form, 'registered': registered}, context)
 
-		
+
 def about(request):
-	return render(request,'latest/about.html')
+    return render_to_response('latest/about.html')
+
 
 def user_login(request):
     # Like before, obtain the context for the user's request.
@@ -152,6 +156,7 @@ def user_login(request):
         # No context variables to pass to the template system, hence the
         # blank dictionary object...
         return render_to_response('latest/login.html', {}, context)
+
 
 @login_required
 def user_logout(request):
